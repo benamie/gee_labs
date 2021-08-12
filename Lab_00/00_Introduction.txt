@@ -8,10 +8,16 @@
 * Ease of getting started 
 * Modularized code blocks 
 * Compute on Cloud 
+* Extensive datasets available
 
 ## Understanding Google Earth Engine
 
-* Perhaps a video? 
+* How it works 
+* Connect data with functions 
+
+## Getting Started
+
+* Setting Up account 
 * Code Editor
   * https://developers.google.com/earth-engine/guides/playground?hl=en
 * Documentation Resources
@@ -19,9 +25,8 @@
 * Tutorials
 * Videos from GEE conference 
 
-## Getting Started
+## How to Use Google Earth Engine
 
-* Setting Up account 
 * Using the code blocks
 * Modifying the code blocks
 * Understanding the Data structures  
@@ -29,22 +34,6 @@
 * Incorporating your google drive or cloud account 
 * Importing feature collections from outside GEE 
 * Where to go to learn more 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
