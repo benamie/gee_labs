@@ -15,23 +15,39 @@ The purpose of this lab is to start working with digital images, datum, and proj
 3. Evaluate the projection and attributes of a digital image
 4. Apply image visualization code in GEE to visualize a digital image
 
-# Section 1: What is a digital image?
+# Section 1: GeoSpatial Imagery
 
-A digital image, otherwise known as [raster](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/raster-and-images/what-is-raster-data.htm), is a matrix of same-sized pixels that have a defined position defined by rows and columns.  
+####  Digital Image
+
+Before we discuss geospatial imagery, let's discuss a digital image. It is a matrix of same-sized pixels that have a position defined by rows and columns and a value associated with that position. A digital image might be 8 pixels wide by 8 pixels tall - you can reference the position from a given axis (it depends on the context, but most image processing uses the top-left of an image as the reference point). In a traditional photograph, you typically have three layers, signifying a Red, Blue and Green layer, which compose a full-color photograph and creates a three dimensional matrix, now consisting of row, column and layer. 
+
+![Screen Shot 2021-08-29 at 12.10.43 PM](./clip_image003.png)
 
 
-
-measured with respect to the axes of a specific Coordinate Reference System (CRS).  
-
-A CRS in Earth Engine is often referred to as a projection, since it combines a shape of the Earth with a [datum](https://en.wikipedia.org/wiki/Geodetic_datum) and a transformation from that spherical shape to a flat map, called a [projection](https://en.wikipedia.org/wiki/Map_projection). 
 
 ![clip_image001](./clip_image002.png)
 
-Let’s view a digital image in GEE to better understand this concept:
+#### Geospatial Image 
 
-1. In the map window of GEE, click on the Point geometry tool using the [geometry drawing tools](https://developers.google.com/earth-engine/playground#geometry-tools) to define your area of interest (for the purposes of consistency in this exercise, place a point on the Virginia Tech Drillfield, which will bring you roughly to `[-80.42, 37.22]`). As a reminder, you can find more information on geometry drawing tools in GEE’s Guides. Name the import `point`.
+Geospatial imagery still relies on the fundamentals of a digital image, but there is additional complexity. First of all, the earth is a sphere and an image is a flat, square surface. To make use of Geospatial imagery, we have to align the pixel to the real-world location. There is quite a bit of mathematics and methodology in this process, but we can simplify it down to two main components - establishing a Geographic Coordinate System (GCS) and a Projected Coordinate system (PCS). 
 
-2. Import NAIP imagery by searching for 'naip' and choosing the *'NAIP: National Agriculture Imagery Program'* raster dataset. Name the import `naip`. 
+The GCS defines the spherical location of the image, while the PCS defines how the grid around that location is constructed. Because the earth is not a perfect sphere, there are different GCS for different regions, such as 'North American Datum: 83' which is used to accurately define North America, and 'World Geodetic System of 1984', which is used globally. Much of the discussion of defining GCS is outside the scope of this course, but the important thing to note is that it defines the starting point for the projection. 
+
+The PCS is the process of building a flat grid around the GCS in which you can create a relationship between each pixel of a 2-dimensional image to the corresponding area on the world. Some of the common formats include EPSG, Albers Conic, Lambert, Eckert, Equidistant, etc. Again, there is a vast amount of discussion about this topic, and certain PCS are designed for different formats - the needs of a petroleum engineer working over a few square miles are different than a climate change researcher.  
+
+ESRI (makers of ArcGIS ) has a well written [article](https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/gcs_vs_pcs/) discussing the difference between GCS and PCS that will put this information into context. While it is very important to understand the role of GCS and PCS, Google Earth Engine takes care of much of the complexity behind the scenes. Further documentation on the GEE methodology can be found [here](https://developers.google.com/earth-engine/guides/projections). In our first exercise, we will show you how to identify the PCS so you can understand the underlying structure. 
+
+An additional complication of geospatial imagery is that, as opposed to a traditional digital image, it commonly consists of more than simply a Red/GreenBlue layer. For instance, Landsat 8 has bands 1-7, 10 and 11, while Planet Labs Multispectral has a Blue, Green, Red, Near InfraRed and Panchromatic, the last of which has a different resolution than the other layers. In many Machine Learning projects, you normalize the BGR into a single grayscale. The point here is that understanding the bands in your data, identifying which bands are necessary for your analysis, and ensuring that they represent consistent spatial locations is essential. Again, GEE takes care of much of the calculations behind the scenes, but we will review and work to understand how this process works.  
+
+A good introduction to raster imagery for geospatial is written by ESRI in this [article](https://desktop.arcgis.com/en/arcmap/10.3/manage-data/raster-and-images/what-is-raster-data.htm).
+
+#### Practical 
+
+Let’s view an image in GEE to better understand this concept:
+
+1. In the map window of GEE, click on the Point geometry tool using the [geometry drawing tools](https://developers.google.com/earth-engine/playground#geometry-tools) to define your area of interest (for the purposes of consistency in this exercise, place a single point on the Virginia Tech Drillfield, which will bring you roughly to `[-80.42, 37.22]`). As a reminder, you can find more information on geometry drawing tools in GEE’s Guides. Name the import `point`.
+
+2. Import the NAIP imagery by searching for 'naip' and choosing the *'NAIP: National Agriculture Imagery Program'* raster image collection. There is a code block which you can use to copy into the editor, and name this variable `naip`. 
 
 3. Get a single, recent NAIP image over your study area and inspect it:
 
@@ -48,16 +64,24 @@ Let’s view a digital image in GEE to better understand this concept:
     Map.addLayer(image, {}, 'Original image');
     ```
 
-4. Expand the image object that is printed to the console by clicking on the dropdown triangles. Expand the property called `bands` and expand one of the bands (0, for example). Note that the CRS transform is stored in the `crs_transform` property underneath the band dropdown and the CRS is stored in the `crs` property, which references an EPSG code.  ** EPSG Codes** EPSG codes are 4-5 digit numbers that represent CRS definitions, of which each code represents a particular definition. The acronym EPGS, comes from the (now defunct) European Petroleum Survey Group.  The CRS of our image is [EPSG:26917](https://spatialreference.org/ref/epsg/nad83-utm-zone-17n/). You can often learn more about those [EPSG codes](http://www.epsg-registry.org/) from [thespatialreference.org](http://spatialreference.org/). The CRS transform is a list  `[m00, m01, m02, m10, m11, m12]`  in the notation of [this reference](http://docs.oracle.com/javase/7/docs/api/java/awt/geom/AffineTransform.html).
+4. Expand the image object that is printed to the console by clicking on the dropdown triangles. Expand the property called `bands` and expand one of the bands (0, for example). Note that the CRS transform is stored in the `crs_transform` property underneath the band dropdown and the CRS is stored in the `crs` property, which references an EPSG code.  
   
-5. In addition to using the dropdowns, you can also access these data programmatically with the `.projection()` method:
+5. **EPSG Codes** are 4-5 digit numbers that represent a particular CRS definition. The acronym EPSG comes from the (now defunct) European Petroleum Survey Group, but is still widely used.  The CRS of this individual image is [EPSG:26917](https://spatialreference.org/ref/epsg/nad83-utm-zone-17n/). You can learn more about those EPSG codes from [the EPSG homepage](https://epsg.org/home.html). 
+
+6. The CRS transform is a list  `[m00, m01, m02, m10, m11, m12]`  that defines how to to map pixel coordinates to their associated spherical coordinate through an affine transformation - this is outside of the scope of this class, but more information can be found at [Rasterio](https://rasterio.readthedocs.io/en/latest/topics/georeferencing.html), which provides detailed documentation for the popular Python library designed for working with geospatial data. 
+
+7. In addition to using the dropdowns, you can also access these data programmatically with the `.projection()` method:
 
     ```javascript
     // Display the projection of band 0
     print('Inspect the projection of band 0:', image.select(0).projection());
     ```
 
-6. Note that the projection can differ by band, which is why it's good practice to inspect the projection of individual image bands. (If you call `.projection()` on an image for which the projection differs by band, you'll get an error.) Explore the `ee.Projection` docs to learn about useful methods offered by the `Projection` object. (To play with projections offline, try [this tool](http://www.giss.nasa.gov/tools/gprojector/).)
+8. Note that the projection can differ by band, which is why it's good practice to inspect the projection of individual image bands. 
+
+9. Note that if you call `.projection()` on an image for which the projection differs by band you will get an error. Exchange the NAIP imagery with the Planet SkySat MultiSpectral image collection - note that the error occurs because the 'P' band has a different pixel size than the others. 
+
+10. Explore the `ee.Projection` docs to learn about useful methods offered by the `Projection` object. To work with projections offline, try [this tool](http://www.giss.nasa.gov/tools/gprojector/).
 
 
 # Section 2: Digital Image Visualization
@@ -418,7 +442,7 @@ Name three major changes you can view in the Blacksburg Area in the last decade.
 ---
 
 ---
-:warning: **Question 7**
+:question: **Question 7**
 
 Conduct a search to compare the technical characteristics of the following sensors: 
 
