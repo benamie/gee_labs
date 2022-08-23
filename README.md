@@ -7,24 +7,15 @@ For further questions, please email [Ozzy](aocampos@vt.edu) or [Elinor](elinor@v
 Table of Contents
 
 Below, you will find the table of contents and a brief summary of each lab.
-Section 1 - Fundamentals
 
-01 - Intro
-
-02 - Getting started (libraries and authentication)
-
-03 - Introduction to Google Earth Engine (GEE)
-
-04 - Defining a digital image
-
-05 - Resolution (spatial, temporal, spectral, radiometric)
-
-06 - Visualization with GEE
-
-07 - Building indices
-
-08 - Transformations
-
-09 - Vector Introduction (geopandas, converting to GEE Objects)
+0. **Prelab** Getting started (libraries and authentication)
+1. **Remote Sensing Basics and Intro to GEE**
+2. **Digital Imagery** and image processing
+3. **Spectral Indices and Transformations**
+4. **Classification and Regression**
+5. **Time Series**
+6. World Bank Tutorial on Night Lights Dataset (optional)
+7. Introduction to Active Sensors (optional)
+8. Machine Learning with RS data (optional)
 
 Z - Building a Local Environment
