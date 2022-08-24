@@ -24,4 +24,4 @@ Below, you will find the table of contents and a brief summary of each lab.
 8. Machine Learning with RS data (optional)
 
 
-Appendix - Building a Local Python Environment
+Appendix - [Building a Local Python Environment](https://colab.research.google.com/github/benamie/gee_labs/blob/main/Z_LocalEnvironment.ipynb)
