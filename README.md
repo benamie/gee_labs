@@ -9,13 +9,22 @@ Table of Contents
 Below, you will find the table of contents and a brief summary of each lab.
 
 0. **Prelab** Getting started (libraries and authentication)
-1. **Remote Sensing Basics and Intro to GEE**
+
+1. **[Remote Sensing Basics and Intro to GEE](https://colab.research.google.com/github/benamie/gee_labs/blob/main/01_BackgroundIntro.ipynb)**
+
 2. **Digital Imagery** and image processing
+
 3. **Spectral Indices and Transformations**
+
 4. **Classification and Regression**
+
 5. **Time Series**
+
 6. World Bank Tutorial on Night Lights Dataset (optional)
+
 7. Introduction to Active Sensors (optional)
+
 8. Machine Learning with RS data (optional)
 
-Z - Building a Local Environment
+
+Z - Building a Local Environment for working with GEE in Python
