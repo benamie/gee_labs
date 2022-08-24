@@ -8,13 +8,13 @@ Table of Contents
 
 Below, you will find the table of contents and a brief summary of each lab.
 
-[Introduction and Attributions](01-Intro)
+[Introduction and Attributions](https://colab.research.google.com/github/benamie/gee_labs/blob/main/01-Intro.ipynb)
 
 0. **Prelab** 
-   1. [Getting Started]()
-   2. [Introduction to GEE](03-IntrotoGEE)
+   1. [Getting Started](https://colab.research.google.com/benamie/gee_labs/blob/main/02-GettingStarted.ipynb)
+   2. [Introduction to GEE](https://colab.research.google.com/benamie/gee_labs/blob/main/03-IntrotoGEE.ipynb)
 
-1. **[Remote Sensing Basics](https://colab.research.google.com/github/benamie/gee_labs/blob/main/01_BackgroundIntro.ipynb)**
+1. **[Remote Sensing Basics](https://colab.research.google.com/github/benamie/gee_labs/blob/main/04-RSBasics.ipynb)**
 2. **Digital Imagery** and image processing
 3. **Spectral Indices and Transformations**
 4. **Classification and Regression**
