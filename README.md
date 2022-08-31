@@ -8,14 +8,14 @@ Table of Contents
 
 Below, you will find the table of contents and a brief summary of each lab.
 
-[Introduction and Attributions](https://colab.research.google.com/github/benamie/gee_labs/blob/main/01-Intro.ipynb)
+[Introduction and Attributions](https://colab.research.google.com/github/benamie/gee_labs/blob/main/00-Intro.ipynb)
 
 0. **Prelab** 
-   1. [Getting Started](https://colab.research.google.com/github/benamie/gee_labs/blob/main/02-GettingStarted.ipynb)
-   2. [Introduction to GEE](https://colab.research.google.com/github/benamie/gee_labs/blob/main/03-IntrotoGEE.ipynb)
+   1. [Getting Started](https://colab.research.google.com/github/benamie/gee_labs/blob/main/00-GettingStarted.ipynb)
+   2. [Introduction to GEE](https://colab.research.google.com/github/benamie/gee_labs/blob/main/00-IntrotoGEE.ipynb)
 
-1. **[Remote Sensing Basics](https://colab.research.google.com/github/benamie/gee_labs/blob/main/04-RSBasics.ipynb)**
-2. **Digital Imagery** and image processing
+1. **[Remote Sensing Basics](https://colab.research.google.com/github/benamie/gee_labs/blob/main/01-RSBasics.ipynb)**
+2. [**Digital Imagery**](https://colab.research.google.com/github/benamie/gee_labs/blob/main/02-Image_Viz.ipynb) and Image Processing
 3. **Spectral Indices and Transformations**
 4. **Classification and Regression**
 5. **Time Series**
@@ -23,5 +23,7 @@ Below, you will find the table of contents and a brief summary of each lab.
 7. Introduction to Active Sensors (optional)
 8. Machine Learning with RS data (optional)
 
+Miscellaneous Topics 
 
-Appendix - [Building a Local Python Environment](https://colab.research.google.com/github/benamie/gee_labs/blob/main/Z_LocalEnvironment.ipynb)
+* [Building a Local Python Environment](https://colab.research.google.com/github/benamie/gee_labs/blob/main/Z_LocalEnvironment.ipynb)
+* [Working with Vector Data](https://colab.research.google.com/github/benamie/gee_labs/blob/main/Z_vector.ipynb)
