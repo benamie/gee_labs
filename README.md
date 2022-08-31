@@ -15,7 +15,7 @@ Below, you will find the table of contents and a brief summary of each lab.
    2. [Introduction to GEE](https://colab.research.google.com/github/benamie/gee_labs/blob/main/00-IntrotoGEE.ipynb)
 
 1. **[Remote Sensing Basics](https://colab.research.google.com/github/benamie/gee_labs/blob/main/01-RSBasics.ipynb)**
-2. **Digital Imagery** and image processing
+2. [**Digital Imagery**](https://colab.research.google.com/github/benamie/gee_labs/blob/main/02-Image_Viz.ipynb) and Image Processing
 3. **Spectral Indices and Transformations**
 4. **Classification and Regression**
 5. **Time Series**
