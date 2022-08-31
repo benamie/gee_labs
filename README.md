@@ -12,7 +12,7 @@ For further questions, please contact [Ozzy](aocampos@vt.edu) or [Elinor](elinor
   1. [Getting Started](https://colab.research.google.com/github/benamie/gee_labs/blob/main/00-GettingStarted.ipynb)
   2. [Introduction to GEE](https://colab.research.google.com/github/benamie/gee_labs/blob/main/00-IntrotoGEE.ipynb)
 
-### LABS
+## LABS
 *(submit responses on gradescope, instructions within each lab)*
 1. **[Remote Sensing Basics](https://colab.research.google.com/github/benamie/gee_labs/blob/main/01-RSBasics.ipynb)**
 2. [**Digital Imagery and Image Processing**](https://colab.research.google.com/github/benamie/gee_labs/blob/main/02-Image_Viz.ipynb) 
@@ -23,7 +23,6 @@ For further questions, please contact [Ozzy](aocampos@vt.edu) or [Elinor](elinor
 7. Introduction to Active Sensors (optional)
 8. Machine Learning with RS data (optional)
 
-### Miscellaneous Topics 
-<br>
-* [Building a Local Python Environment](https://colab.research.google.com/github/benamie/gee_labs/blob/main/Z_LocalEnvironment.ipynb)
-* [Working with Vector Data](https://colab.research.google.com/github/benamie/gee_labs/blob/main/Z_vector.ipynb)
+## Miscellaneous Topics 
+- [Building a Local Python Environment](https://colab.research.google.com/github/benamie/gee_labs/blob/main/Z_LocalEnvironment.ipynb)
+- [Working with Vector Data](https://colab.research.google.com/github/benamie/gee_labs/blob/main/Z_vector.ipynb)
