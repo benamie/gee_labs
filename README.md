@@ -15,8 +15,8 @@ For further questions, please contact [Ozzy](aocampos@vt.edu) or [Elinor](elinor
 ### LABS
 *(submit responses on gradescope, instructions within each lab)*
 1. **[Remote Sensing Basics](https://colab.research.google.com/github/benamie/gee_labs/blob/main/01-RSBasics.ipynb)**
-2. [**Digital Imagery**](https://colab.research.google.com/github/benamie/gee_labs/blob/main/02-Image_Viz.ipynb) and Image Processing
-3. **Spectral Indices and Transformations**
+2. [**Digital Imagery and Image Processing**](https://colab.research.google.com/github/benamie/gee_labs/blob/main/02-Image_Viz.ipynb) 
+3. **Spectral Indices and Transformations(**
 4. **Classification and Regression**
 5. **Time Series**
 6. World Bank Tutorial on Night Lights Dataset (optional)
