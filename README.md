@@ -4,7 +4,7 @@ This repository includes Jupyter Notebooks that are used as a framework for buil
 
 Although everyone will submit your own results for credit, students are also encouraged to work and learn together (just indicate who you worked with on Gradescope when you submit). 
 
-For further questions, please contact [Ozzy](aocampos@vt.edu) or [Elinor](elinor@vt.edu). If you're part of the class, please drop a note in the class Q&A on [Piazza](https://piazza.com/class/l743y6601i62hu).
+For further questions, please drop a note in the class Q&A on [Piazza](https://piazza.com/class/l743y6601i62hu). 
 
 ## Background and Intro
 - [Introduction and Attributions](https://colab.research.google.com/github/benamie/gee_labs/blob/main/00-Intro.ipynb)
@@ -15,8 +15,8 @@ For further questions, please contact [Ozzy](aocampos@vt.edu) or [Elinor](elinor
 ## LABS
 *(submit responses on gradescope, instructions within each lab)*
 1. **[Remote Sensing Basics](https://colab.research.google.com/github/benamie/gee_labs/blob/main/01-RSBasics.ipynb)**
-2. [**Digital Imagery and Image Processing**](https://colab.research.google.com/github/benamie/gee_labs/blob/main/02-Image_Viz.ipynb) 
-3. **Spectral Indices and Transformations(**
+2. **[Digital Imagery and Image Processing]**(https://colab.research.google.com/github/benamie/gee_labs/blob/main/02-Image_Viz.ipynb) 
+3. **Spectral Indices and Transformations**
 4. **Classification and Regression**
 5. **Time Series**
 6. World Bank Tutorial on Night Lights Dataset (optional)
